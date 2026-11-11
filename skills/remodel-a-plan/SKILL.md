@@ -18,7 +18,7 @@ A remodel starts from what is there. Draw the existing state first, exactly as g
    - doors: `update_opening` to move, widen, re-hang or turn one sliding; `hang_doors` after the rooms are relabelled.
    `references/dwelling.md` and `references/doors.md` are the rules the result is judged by.
 4. **Furnish what changed** with the room composers (see the `furnish-a-room` skill), with `openings_policy: "keep"` when the user wants doors and windows left as they are.
-5. **Check and show.** `validate_plan` and `describe_plan` again, `measure` with `kind: "route"` from the entrance to any room whose access changed, then `view_plan` and the `claim_url`.
+5. **Check and show.** `validate_plan` and `describe_plan` again, `measure` with `kind: "route"` from the entrance to any room whose access changed, then one `view_plan` and the `claim_url`. Where Claude shows interactive apps, every `view_plan` call adds another viewer card to the conversation, and a viewer already open follows the plan's saved changes live; `validate_plan` with `include_preview: true` returns the drawing without a card.
 
 ## Defaults
 

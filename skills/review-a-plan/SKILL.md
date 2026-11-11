@@ -15,7 +15,7 @@ A review reads the plan with the server's measurements, not by eye: the server c
    - `kind: "route"`, `from: "entrance"`, `to` a room, `min_width_m: 0.9`: the route, its length, its narrowest point and up to four tight spots;
    - `kind: "clearance"` on a piece or a door: the free space on each side, the leaf sweep and the 0.60 m passage strip of the doorway;
    - `kind: "distance"` between two elements; `kind: "fits"` for where a piece of a given size stands.
-4. **Look.** `view_plan` with `annotate: ["tags"]` writes the kind and size of every piece and every opening on the drawing; with `room_id` (or `box_m`) it returns a close-up of one room.
+4. **Look.** `view_plan` with `annotate: ["tags"]` writes the kind and size of every piece and every opening on the drawing; with `room_id` (or `box_m`) it returns a close-up of one room. Where Claude shows interactive apps, every `view_plan` call adds another viewer card to the conversation, so keep the looks to the ones the review needs.
 5. **Judge against the rules** in `references/`, room by room, and report in the words of the trade: what does not work, by how much, and the change that fixes it. When the user wants the fixes applied, apply them, then run `validate_plan` again.
 
 ## What the checks find, and how much weight each has

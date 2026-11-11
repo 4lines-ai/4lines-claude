@@ -17,9 +17,9 @@ A home is drawn in three passes: the walls and the rooms, the doors, then the fu
    Either way, follow `references/dwelling.md`: it is the rule set the engine and the server check against.
 4. **Label every room.** `set_room` with the closed `label_key` list (`entry`, `hallway`, `ldk`, `full_bathroom`, `master_bedroom`...); `custom_name` carries the user's own wording. One name per enclosed space; an open living-dining-kitchen is one `ldk`.
 5. **Doors and windows.** `add_openings` with `opens_into` (or nothing) and the server hangs each door into the room it serves; `hang_doors` rehangs every door once the rooms are labelled. Which leaf (hinged or sliding) follows `references/doors.md`.
-6. **Check the bones before furnishing.** `validate_plan` (text, cheap), then `describe_plan` to read every room with its area, its doors and how it is reached from the entrance, and `view_plan` to see it. `measure` with `kind: "route"`, `from: "entrance"` and `min_width_m: 0.9` walks to a room and names the narrowest point. Fix what the findings name, and validate again.
+6. **Check the bones before furnishing.** `validate_plan` (text, cheap; with `include_preview: true` it also returns the drawing, with the element ids), then `describe_plan` to read every room with its area, its doors and how it is reached from the entrance. `measure` with `kind: "route"`, `from: "entrance"` and `min_width_m: 0.9` walks to a room and names the narrowest point. Fix what the findings name, and validate again.
 7. **Furnish.** Follow the `furnish-a-room` skill: `design_kitchen`, `design_bathroom`, `design_bedroom` and `design_living` lay out a whole room in one call each, and each answer's `summary` is that room in one line for the user.
-8. **Show it.** `place_camera` inside the main room, looking across it (cameras are where the user renders from in the editor), `view_plan` for the final look, and give the user the `claim_url`.
+8. **Show it, once.** `place_camera` inside the main room, looking across it (cameras are where the user renders from in the editor), one `view_plan` for the final look, and give the user the `claim_url`. Where Claude shows interactive apps, every `view_plan` call adds another viewer card to the conversation, and a viewer already open follows the plan's saved changes live: the looks along the way are the ones in step 6.
 
 ## Defaults
 

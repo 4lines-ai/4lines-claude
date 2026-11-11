@@ -1,7 +1,7 @@
 {
   "name": "4lines",
   "displayName": "4Lines",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Draw, furnish, remodel and review architectural floor plans with the 4Lines connector, following the design rules of a practising architect: circulation from the front door, standard room sizes, fitted kitchens, linear bathrooms, bedrooms with their wardrobe and living rooms around a focal point.",
   "author": { "name": "4Lines", "url": "https://4lines.ai" },
   "homepage": "https://4lines.ai",
