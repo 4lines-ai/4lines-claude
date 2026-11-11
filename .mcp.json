@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "4lines": {
+      "type": "http",
+      "url": "https://mcp.4lines.ai/mcp/drafts"
+    }
+  }
+}

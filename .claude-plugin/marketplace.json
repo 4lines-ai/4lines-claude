@@ -1,0 +1,12 @@
+{
+  "name": "4lines",
+  "description": "4Lines plugins for Claude: architectural floor plans drawn, furnished, remodelled and reviewed with the 4Lines connector.",
+  "owner": { "name": "4Lines", "url": "https://4lines.ai" },
+  "plugins": [
+    {
+      "name": "4lines",
+      "source": "./",
+      "description": "Draw, furnish, remodel and review architectural floor plans with the 4Lines connector."
+    }
+  ]
+}
