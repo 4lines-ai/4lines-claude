@@ -20,13 +20,13 @@ Stated in: `design_living`.
 
 ## Rule 3
 
-THE DINING: 0.75-0.90 m clear all round the table to pull the chairs out, and the table goes NEAR THE KITCHEN — when there is a kitchen inside this room it is an LDK, so the table takes that end and the sitting area the far one, and nothing of the kitchen is touched.
+THE DINING: 0.75-0.90 m clear all round the table to pull the chairs out, and the table goes NEAR THE KITCHEN. AN LDK (the label, or a kitchen inside the room) IS SPLIT INTO THREE ZONES FIRST: the kitchen, the table in front of it (or where it fits, down to 0.80 x 0.80) and the sitting area, the tv facing the sofa if a wall gives it. design_kitchen uses the same split; a kitchen not placed yet keeps its wall.
 
 Stated in: `design_living`.
 
 ## Rule 4
 
-THE TABLE IS SIZED TO THE ROOM AND THE HOUSEHOLD: a generous living-dining of about 28 m2 or more seats 8-10 at 2.20 x 1.00 m — never default to the small 1.50 x 0.90 one.
+THE TABLE IS SIZED TO THE ROOM AND THE HOUSEHOLD: the people the bedrooms sleep (two in a studio) plus two guests; if unknown, a living-dining of about 28 m2 or more seats 8-10 at 2.20 x 1.00 m — never default to the small 1.50 x 0.90 one.
 
 Stated in: `design_living`.
 

@@ -11,7 +11,7 @@ Four rooms have a composer on the server that lays the whole room out in one cal
 
 1. **Find the rooms.** `query_plan` with `{"filter":{"kind":"room"}}` lists every room with its id, area, size and the doors and windows on its walls. `describe_plan` reads the same rooms with how each is reached from the entrance.
 2. **Lay out each room with its composer**, passing `in_room`:
-   - kitchen or `ldk`: `design_kitchen`. Leave `shape` and `against_wall` out and the server chooses among a straight run, an L, a U, an island and a peninsula; the answer says `shape_chosen` and why the others lost. In a kitchen or an `ldk` the dining table comes with it.
+   - kitchen or `ldk`: `design_kitchen`. Leave `shape` and `against_wall` out and the server chooses among a straight run, an L, a U, an island and a peninsula (in an `ldk` it splits the room into kitchen, dining and sitting zones first, and the kitchen is a straight run or an L); the answer says `shape_chosen` and why the others lost. In a kitchen or an `ldk` the dining table comes with it.
    - bathroom: `design_bathroom`, the linear row basin, wc, shower.
    - bedroom: `design_bedroom`. Leave `bed` out: the bed follows the room area.
    - living, living-dining or `ldk`: `design_living`, after `design_kitchen` in an `ldk` (a dining table already there stays and the sitting group goes round it).
