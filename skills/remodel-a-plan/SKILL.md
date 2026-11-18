@@ -9,16 +9,17 @@ A remodel starts from what is there. Draw the existing state first, exactly as g
 
 ## Order of work
 
-1. **Draw the existing plan** on a draft (`create_plan`), with the measures the user gives: `add_walls` (facade usually 0.30 m, partitions 0.10 m), `add_openings`, `set_room`. When the user describes a renovation, mark what exists today with `phase: "inicial"`, what comes down with `"derribo"` and what is new with `"nueva"` (the default); the editor then shows the initial state, the final state and demolition plus new work.
-2. **Read it before changing it.** `describe_plan` gives every room with its area, its doors and how it is reached from the entrance; `validate_plan` lists what already does not work; `view_plan` with `annotate: ["ids", "dimensions"]` shows the wall ids to refer to. Tell the user what the plan has before proposing what to change.
-3. **Change it with the editing tools**, each with its own reach:
+1. **Keep the original, if the user wants it.** When the user has a draft of this plan and prefers it stays as it is, copy it first with `duplicate_plan` and work on the copy; the copy keeps the same element ids. If they have not said and the change is large, ask once before copying.
+2. **Draw the existing plan** on a draft (`create_plan`), with the measures the user gives: `add_walls` (facade usually 0.30 m, partitions 0.10 m), `add_openings`, `set_room`. When the user describes a renovation, mark what exists today with `phase: "inicial"`, what comes down with `"derribo"` and what is new with `"nueva"` (the default); the editor then shows the initial state, the final state and demolition plus new work.
+3. **Read it before changing it.** `describe_plan` gives every room with its area, its doors and how it is reached from the entrance; `validate_plan` lists what already does not work; `view_plan` with `annotate: ["ids", "dimensions"]` shows the wall ids to refer to. Tell the user what the plan has before proposing what to change.
+4. **Change it with the editing tools**, each with its own reach:
    - move a partition: `update_wall` with `move_m` + `towards` (the walls that die into it follow, and anchored doors and furniture keep their place along it);
    - remove a partition: `delete_wall`, then `delete_room` on the label it leaves without a space; take a door out with `delete_opening`, never by deleting its wall;
    - new partitions: `add_walls` with `parallel_to` + `at_m` for an exact clear width;
    - doors: `update_opening` to move, widen, re-hang or turn one sliding; `hang_doors` after the rooms are relabelled.
    `references/dwelling.md` and `references/doors.md` are the rules the result is judged by.
-4. **Furnish what changed** with the room composers (see the `furnish-a-room` skill), with `openings_policy: "keep"` when the user wants doors and windows left as they are.
-5. **Check and show.** `validate_plan` and `describe_plan` again, `measure` with `kind: "route"` from the entrance to any room whose access changed, then one `view_plan` and the `claim_url`. Where Claude shows interactive apps, every `view_plan` call adds another viewer card to the conversation, and a viewer already open follows the plan's saved changes live; `validate_plan` with `include_preview: true` returns the drawing without a card.
+5. **Furnish what changed** with the room composers (see the `furnish-a-room` skill), with `openings_policy: "keep"` when the user wants doors and windows left as they are.
+6. **Check and show.** `validate_plan` and `describe_plan` again, `measure` with `kind: "route"` from the entrance to any room whose access changed, then one `view_plan` and the `claim_url`. Where Claude shows interactive apps, every `view_plan` call adds another viewer card to the conversation, and a viewer already open follows the plan's saved changes live; `validate_plan` with `include_preview: true` returns the drawing without a card.
 
 ## Defaults
 
